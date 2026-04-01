@@ -9,17 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#1a1f2e',
-        accent: '#4F6EF7',
-        'accent-light': '#6B85F8',
-        'accent-dark': '#3554E0',
-        surface: '#0f1420',
-        'surface-2': '#161c2d',
-        'surface-3': '#1e2640',
-        muted: '#69727d',
+        /* Palette officielle Muzzo */
+        primary: '#01164D',        /* Navy profond — texte logo */
+        accent: '#0B39AF',         /* Bleu brand — icône papillon */
+        'accent-light': '#2554D4', /* Bleu intermédiaire */
+        'accent-dark': '#0A2F96',  /* Bleu foncé */
+        'accent-glow': '#4d7fff',  /* Bleu clair pour gradients */
+        surface: '#080e1f',        /* Background dark navy */
+        'surface-2': '#0d1628',
+        'surface-3': '#122038',
+        muted: '#6b7a99',
         border: 'rgba(255,255,255,0.08)',
         foreground: '#ffffff',
-        'foreground-muted': '#9aa5b4',
+        'foreground-muted': '#8fa3c8',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],

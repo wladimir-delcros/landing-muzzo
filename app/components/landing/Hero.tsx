@@ -15,7 +15,7 @@ export function Hero() {
       <div
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
         style={{
-          background: 'radial-gradient(circle, rgba(79,110,247,0.08) 0%, transparent 60%)',
+          background: 'radial-gradient(circle, rgba(11,57,175,0.08) 0%, transparent 60%)',
         }}
       />
 
@@ -157,7 +157,7 @@ export function Hero() {
             </div>
 
             {/* Bottom fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0f1420] to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#080e1f] to-transparent" />
           </div>
         </motion.div>
       </div>

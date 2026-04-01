@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { MagneticButton } from '../ui/MagneticButton'
+import { MuzzoLogo } from '../ui/MuzzoLogo'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -30,22 +31,15 @@ export function Navbar() {
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'bg-[#0f1420]/90 backdrop-blur-xl border-b border-white/[0.06]'
+            ? 'bg-[#080e1f]/90 backdrop-blur-xl border-b border-white/[0.06]'
             : 'bg-transparent'
         }`}
       >
         <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-          {/* Logo */}
-          <motion.a
-            href="#"
-            className="flex items-center gap-2 group"
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center glow-sm">
-              <span className="text-white font-bold text-sm">M</span>
-            </div>
-            <span className="text-white font-semibold text-lg tracking-tight">muzzo</span>
-          </motion.a>
+          {/* Logo officiel Muzzo */}
+          <a href="#" className="flex items-center" aria-label="Muzzo — accueil">
+            <MuzzoLogo width={120} height={22} animate />
+          </a>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
@@ -90,7 +84,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="fixed inset-0 z-40 bg-[#0f1420]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden"
+            className="fixed inset-0 z-40 bg-[#080e1f]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden"
           >
             {links.map((link, i) => (
               <motion.a
@@ -109,6 +103,7 @@ export function Navbar() {
               Lancer une mission
             </MagneticButton>
           </motion.div>
+
         )}
       </AnimatePresence>
     </>

@@ -95,7 +95,7 @@ export function Problem() {
 
               {/* Hover glow */}
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ boxShadow: 'inset 0 0 40px rgba(79,110,247,0.05)' }} />
+                style={{ boxShadow: 'inset 0 0 40px rgba(11,57,175,0.05)' }} />
             </motion.div>
           ))}
         </div>

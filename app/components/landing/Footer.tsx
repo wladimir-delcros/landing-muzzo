@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Linkedin, MapPin } from 'lucide-react'
+import { MuzzoLogo } from '../ui/MuzzoLogo'
 
 const links = {
   Services: [
@@ -35,12 +36,9 @@ export function Footer() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="flex items-center gap-2 mb-4"
+              className="mb-4"
             >
-              <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center glow-sm">
-                <span className="text-white font-bold text-sm">M</span>
-              </div>
-              <span className="text-white font-semibold text-lg tracking-tight">muzzo</span>
+              <MuzzoLogo width={130} height={24} animate={false} />
             </motion.div>
 
             <motion.p

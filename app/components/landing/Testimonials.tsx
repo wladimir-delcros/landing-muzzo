@@ -11,7 +11,7 @@ const testimonials = [
     title: 'Head of Talent Acquisition',
     company: 'Mistral AI',
     initials: 'EM',
-    color: 'from-blue-500/30 to-purple-500/30',
+    color: 'from-[#0B39AF]/40 to-[#2554D4]/30',
     metric: '6 mois → 24h',
   },
   {
@@ -47,7 +47,7 @@ const testimonials = [
     title: 'CEO',
     company: 'Liferay France',
     initials: 'MB',
-    color: 'from-pink-500/30 to-purple-500/30',
+    color: 'from-[#0B39AF]/30 to-cyan-600/30',
     metric: '3 semaines chrono',
   },
   {
