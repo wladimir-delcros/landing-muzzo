@@ -3,15 +3,16 @@
 @tailwind utilities;
 
 :root {
-  /* Palette officielle Muzzo */
-  --primary: #01164D;          /* Navy Muzzo — couleur texte logo */
-  --accent: #0B39AF;           /* Bleu Muzzo brand — icône papillon */
-  --accent-light: #2554D4;     /* Bleu clair harmonieux */
-  --accent-dark: #0A2F96;      /* Bleu profond */
-  --surface: #080e1f;          /* Dark background, proche du navy profond */
-  --foreground: #ffffff;
-  --muted: #6b7a99;
-  --border: rgba(255,255,255,0.08);
+  /* Palette DA Muzzo 2026 */
+  --primary: #0B39AF;
+  --accent: #2554D4;
+  --accent-glow: #6B8FFF;
+  --surface: #080e1f;
+  --surface-2: #0d1628;
+  --surface-3: #0a1220;
+  --foreground: #F8F9FF;
+  --muted: #6B7280;
+  --border: rgba(255,255,255,0.07);
 }
 
 * {
@@ -25,15 +26,15 @@ html {
 }
 
 body {
-  background: #0a0a0a;
-  color: #ffffff;
+  background: #080e1f;
+  color: #F8F9FF;
   font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Noise texture overlay */
+/* ─── NOISE TEXTURE ─── */
 .noise-bg::before {
   content: "";
   position: fixed;
@@ -42,7 +43,7 @@ body {
   width: 200%;
   height: 200%;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.025;
+  opacity: 0.03;
   pointer-events: none;
   z-index: 9999;
   animation: grain 8s steps(10) infinite;
@@ -61,9 +62,75 @@ body {
   90% { transform: translate(-1%, 2%); }
 }
 
-/* Gradient text — palette Muzzo */
+/* ─── ABSTRACT BLOBS ─── */
+.blob-1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(11,57,175,0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+  top: -100px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.blob-2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(37,84,212,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  bottom: -50px;
+  left: -50px;
+  pointer-events: none;
+}
+
+.blob-hero {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(ellipse at center, rgba(11,57,175,0.18) 0%, transparent 65%);
+  border-radius: 50%;
+  filter: blur(100px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* ─── GLASSMORPHISM ─── */
+.glass-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.glass {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.glass-strong {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06);
+}
+
+/* ─── GRADIENT TEXT ─── */
 .gradient-text {
-  background: linear-gradient(135deg, #0B39AF 0%, #2554D4 50%, #4d7fff 100%);
+  background: linear-gradient(135deg, #2554D4 0%, #6B8FFF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -76,77 +143,100 @@ body {
   background-clip: text;
 }
 
-/* Custom scrollbar — Muzzo blue */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #080e1f;
-}
-::-webkit-scrollbar-thumb {
-  background: #0B39AF;
-  border-radius: 3px;
+/* ─── SECTION BACKGROUNDS ─── */
+/* Section 1 — Hero */
+.section-hero {
+  background-color: #080e1f;
 }
 
-/* Selection */
+/* Section 2 — LogoCloud */
+.section-logo {
+  background-color: #0d1628;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Section 3 — Problem */
+.section-problem {
+  background-color: #080e1f;
+}
+
+/* Section 4 — Features/Steps */
+.section-features {
+  background-color: #0a1220;
+}
+
+/* Section 5 — Testimonials */
+.section-testimonials {
+  background-color: #080e1f;
+}
+
+/* Section 6 — Steps alt */
+.section-steps {
+  background-color: #0d1628;
+}
+
+/* Section dark (generic) */
+.section-dark {
+  background-color: #080e1f;
+}
+
+/* Section mid */
+.section-mid {
+  background-color: #0d1628;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Section gradient */
+.section-gradient {
+  background: linear-gradient(180deg, #080e1f 0%, #0a1220 50%, #080e1f 100%);
+  border-top: 1px solid rgba(11,57,175,0.12);
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #080e1f; }
+::-webkit-scrollbar-thumb { background: #0B39AF; border-radius: 3px; }
+
+/* ─── SELECTION ─── */
 ::selection {
-  background: rgba(11, 57, 175, 0.35);
+  background: rgba(37,84,212,0.35);
   color: white;
 }
 
-/* Glow effects — Muzzo brand blue */
+/* ─── GLOW EFFECTS ─── */
 .glow-accent {
-  box-shadow: 0 0 40px rgba(11, 57, 175, 0.35), 0 0 80px rgba(11, 57, 175, 0.12);
+  box-shadow: 0 0 40px rgba(11,57,175,0.4), 0 0 80px rgba(11,57,175,0.15);
 }
 
 .glow-sm {
-  box-shadow: 0 0 20px rgba(11, 57, 175, 0.25);
+  box-shadow: 0 0 20px rgba(37,84,212,0.3);
 }
 
-/* Card glass effect — glassmorphism */
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+/* ─── SECTION DIVIDER ─── */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(37,84,212,0.4), transparent);
 }
 
-.glass-strong {
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-}
-
-/* Section backgrounds alternés */
-.section-dark {
-  background-color: #0a0a0a;
-}
-
-.section-mid {
-  background-color: #111111;
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-}
-
-.section-gradient {
-  background: linear-gradient(180deg, #0a0a0a 0%, #0d1020 50%, #0a0a0a 100%);
-  border-top: 1px solid rgba(11, 57, 175, 0.12);
-}
-
-/* Magnetic button */
+/* ─── MAGNETIC BUTTON ─── */
 .magnetic-btn {
   transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   will-change: transform;
 }
 
-/* Section divider — Muzzo blue */
-.section-divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(11, 57, 175, 0.4), transparent);
+/* ─── TYPOGRAPHY SCALE ─── */
+.hero-title {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+}
+
+.section-title {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
 }
