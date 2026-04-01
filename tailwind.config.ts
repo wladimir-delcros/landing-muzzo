@@ -9,43 +9,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        /* Palette officielle Muzzo */
-        primary: '#01164D',        /* Navy profond — texte logo */
-        accent: '#0B39AF',         /* Bleu brand — icône papillon */
-        'accent-light': '#2554D4', /* Bleu intermédiaire */
-        'accent-dark': '#0A2F96',  /* Bleu foncé */
-        'accent-glow': '#4d7fff',  /* Bleu clair pour gradients */
-        surface: '#080e1f',        /* Background dark navy */
-        'surface-2': '#0d1628',
-        'surface-3': '#122038',
-        muted: '#6b7a99',
-        border: 'rgba(255,255,255,0.08)',
-        foreground: '#ffffff',
-        'foreground-muted': '#8fa3c8',
+        /* Palette Muzzo Light 2026 */
+        primary:   '#01164D',   /* Navy — texte, headlines */
+        accent:    '#0B39AF',   /* Bleu brand */
+        'accent-mid': '#2554D4', /* Bleu intermédiaire */
+        'accent-glow': '#6B8FFF', /* Bleu clair pour highlights */
+        'accent-light': '#EEF2FF', /* Fond badge/chip */
+        bg:        '#FFFFFF',
+        'bg-alt':  '#F8F9FC',
+        'bg-muted': '#F1F4FD',
+        surface:   '#FFFFFF',
+        muted:     '#9CA3AF',
+        secondary: '#4B5563',
+        border:    '#E5E9F5',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['var(--font-geist)', 'Geist', 'system-ui', 'sans-serif'],
       },
       animation: {
         'marquee': 'marquee 30s linear infinite',
-        'marquee-reverse': 'marquee-reverse 30s linear infinite',
         'pulse-slow': 'pulse 4s ease-in-out infinite',
-        'float': 'float 6s ease-in-out infinite',
         'grain': 'grain 8s steps(10) infinite',
       },
       keyframes: {
         marquee: {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-50%)' },
-        },
-        'marquee-reverse': {
-          '0%': { transform: 'translateX(-50%)' },
-          '100%': { transform: 'translateX(0%)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
         },
         grain: {
           '0%, 100%': { transform: 'translate(0, 0)' },
@@ -59,10 +48,6 @@ const config: Config = {
           '80%': { transform: 'translate(3%, -3%)' },
           '90%': { transform: 'translate(-1%, 2%)' },
         },
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
   },
