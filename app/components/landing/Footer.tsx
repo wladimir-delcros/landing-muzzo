@@ -6,7 +6,7 @@ import { Linkedin, MapPin } from 'lucide-react'
 const links = {
   Services: [
     { label: 'Employeurs', href: '#employeurs' },
-    { label: 'Chasseurs de tête', href: '#chasseurs' },
+    { label: 'Chasseurs de tete', href: '#chasseurs' },
     { label: 'Lancer une mission', href: 'https://muzzo.io' },
     { label: 'Tarifs', href: '#tarifs' },
   ],
@@ -16,10 +16,10 @@ const links = {
     { label: 'Guide du recrutement', href: 'https://muzzo.io' },
     { label: 'Case studies', href: 'https://muzzo.io' },
   ],
-  'À propos': [
-    { label: 'Notre équipe', href: 'https://muzzo.io' },
+  'A propos': [
+    { label: 'Notre equipe', href: 'https://muzzo.io' },
     { label: 'Presse', href: 'https://muzzo.io' },
-    { label: 'Carrières', href: 'https://muzzo.io' },
+    { label: 'Carrieres', href: 'https://muzzo.io' },
     { label: 'Contact', href: 'https://muzzo.io' },
   ],
 }
@@ -28,22 +28,15 @@ export function Footer() {
   return (
     <footer
       className="relative py-16 overflow-hidden"
-      style={{
-        background: '#080e1f',
-        borderTop: '1px solid rgba(255,255,255,0.07)',
-      }}
+      style={{ background: '#080e1f', borderTop: '1px solid rgba(255,255,255,0.07)' }}
     >
-      {/* Radial depth */}
       <div
         className="pointer-events-none absolute inset-0"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 0%, rgba(11,57,175,0.07) 0%, transparent 55%)',
-        }}
+        style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(11,57,175,0.07) 0%, transparent 55%)' }}
       />
 
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
-          {/* Brand */}
           <div className="lg:col-span-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -51,7 +44,7 @@ export function Footer() {
               viewport={{ once: true }}
               className="mb-4"
             >
-              <a href="https://muzzo.io" aria-label="Muzzo — accueil">
+              <a href="https://muzzo.io" aria-label="Muzzo">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="https://cdn-jkmcd.nitrocdn.com/sxDCNGWafoWtjSofstwSwfeGkvxmEBtI/assets/images/optimized/rev-d5a4e98/muzzo.io/wp-content/uploads/2023/06/muzzo.svg"
@@ -71,11 +64,9 @@ export function Footer() {
               transition={{ delay: 0.1 }}
               className="text-[#6B7280] text-sm leading-relaxed mb-6 max-w-xs"
             >
-              Le réseau de chasseurs de têtes N°1 en France. Le top 1% des talents,
-              sélectionné pour vous.
+              Le reseau de chasseurs de tetes N1 en France. Le top 1% des talents, selectionne pour vous.
             </motion.p>
 
-            {/* Address */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -87,7 +78,6 @@ export function Footer() {
               <span>48 rue de la Bienfaisance, 75008 Paris</span>
             </motion.div>
 
-            {/* Social */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -106,7 +96,6 @@ export function Footer() {
             </motion.div>
           </div>
 
-          {/* Links */}
           {Object.entries(links).map(([category, items], i) => (
             <div key={category}>
               <motion.h4
@@ -143,12 +132,11 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Bottom bar */}
         <div className="section-divider mb-6" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#6B7280]">
-          <span>© 2026 Muzzo. Tous droits réservés.</span>
+          <span>2026 Muzzo. Tous droits reserves.</span>
           <div className="flex flex-wrap items-center gap-6">
-            {['Politique de confidentialité', 'CGVU', 'Mentions légales', 'Gestion des cookies'].map((item) => (
+            {['Politique de confidentialite', 'CGVU', 'Mentions legales', 'Gestion des cookies'].map((item) => (
               <a key={item} href="https://muzzo.io" className="hover:text-[#F8F9FF] transition-colors duration-200">
                 {item}
               </a>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { motion, useSpring } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
@@ -28,21 +28,16 @@ export function MagneticButton({
   const handleMouseMove = (e: React.MouseEvent) => {
     if (!ref.current) return
     const rect = ref.current.getBoundingClientRect()
-    const cx = rect.left + rect.width / 2
-    const cy = rect.top + rect.height / 2
-    x.set((e.clientX - cx) * strength)
-    y.set((e.clientY - cy) * strength)
+    x.set((e.clientX - rect.left - rect.width / 2) * strength)
+    y.set((e.clientY - rect.top - rect.height / 2) * strength)
   }
 
-  const handleMouseLeave = () => {
-    x.set(0)
-    y.set(0)
-  }
+  const handleMouseLeave = () => { x.set(0); y.set(0) }
 
-  const variants = {
-    primary: 'bg-[#0B39AF] text-[#F8F9FF] hover:bg-[#2554D4] border border-[#0B39AF]/60',
-    ghost: 'bg-transparent text-[#6B7280] hover:text-[#F8F9FF] border border-white/[0.07] hover:border-white/20',
-    outline: 'bg-transparent text-[#2554D4] border border-[#0B39AF]/40 hover:bg-[#0B39AF]/10',
+  const variantClasses = {
+    primary: 'bg-[#0B39AF] text-white hover:bg-[#2554D4] border border-[#0B39AF]/80 shadow-sm',
+    ghost: 'bg-transparent text-[#4B5563] hover:text-[#01164D] border border-[#E5E9F5] hover:border-[#0B39AF]/30',
+    outline: 'bg-transparent text-[#0B39AF] border border-[#0B39AF]/40 hover:bg-[#EEF2FF]',
   }
 
   const content = (
@@ -53,7 +48,7 @@ export function MagneticButton({
       onMouseLeave={handleMouseLeave}
       className={cn(
         'magnetic-btn inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium cursor-pointer select-none transition-colors duration-200',
-        variants[variant],
+        variantClasses[variant],
         className
       )}
       onClick={onClick}
@@ -63,9 +58,6 @@ export function MagneticButton({
     </motion.div>
   )
 
-  if (href) {
-    return <a href={href}>{content}</a>
-  }
-
+  if (href) return <a href={href}>{content}</a>
   return content
 }

@@ -7,22 +7,22 @@ const competitors = [
   {
     name: 'Jobboards (LinkedIn, Welcome to the Jungle)',
     issues: [
-      'Tu reçois des candidatures non qualifiées en masse',
+      'Tu recois des candidatures non qualifiees en masse',
       'Aucun chasseur humain ne va chercher le profil passif',
-      'Ton annonce disparaît en 48h sous la concurrence',
-      'Le profil rare que tu cherches ne postule pas — il attend',
+      'Ton annonce disparait en 48h sous la concurrence',
+      'Le profil rare que tu cherches ne postule pas -- il attend',
     ],
-    cost: 'De 500€ à 5 000€/mois — sans garantie de résultat',
+    cost: 'De 500e a 5 000e/mois -- sans garantie de resultat',
   },
   {
     name: 'Cabinets de recrutement traditionnels',
     issues: [
-      'Acompte de 20–30% à payer avant le premier candidat',
-      'Un seul chasseur sur ta mission — pas de réseau spécialisé',
-      'Délais de 3 à 6 mois minimum pour les profils seniors',
-      'Garantie de remplacement limitée à 3 mois (et payante)',
+      'Acompte de 20-30% a payer avant le premier candidat',
+      'Un seul chasseur sur ta mission -- pas de reseau specialise',
+      'Delais de 3 a 6 mois minimum pour les profils seniors',
+      'Garantie de remplacement limitee a 3 mois (et payante)',
     ],
-    cost: '25–33% du salaire annuel + acompte non remboursable',
+    cost: '25-33% du salaire annuel + acompte non remboursable',
   },
 ]
 
@@ -31,13 +31,10 @@ export function CritiqueCompetitors() {
     <section className="py-24 relative overflow-hidden section-dark">
       <div
         className="pointer-events-none absolute inset-0"
-        style={{
-          background: 'radial-gradient(ellipse at 100% 50%, rgba(37,84,212,0.08) 0%, transparent 55%)',
-        }}
+        style={{ background: 'radial-gradient(ellipse at 100% 50%, rgba(37,84,212,0.08) 0%, transparent 55%)' }}
       />
 
       <div className="mx-auto max-w-7xl px-6 relative z-10">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,15 +46,14 @@ export function CritiqueCompetitors() {
             Pourquoi les alternatives ne fonctionnent pas
           </span>
           <h2 className="section-title text-[#F8F9FF]">
-            Les autres solutions du marché ont{' '}
-            <span className="gradient-text">un problème fondamental</span>
+            Les autres solutions du marche ont{' '}
+            <span className="gradient-text">un probleme fondamental</span>
           </h2>
           <p className="text-[#6B7280] text-lg mt-4 max-w-xl mx-auto">
-            Elles ne sont pas conçues pour les profils rares. Elles sont conçues pour les volumes.
+            Elles ne sont pas concues pour les profils rares. Elles sont concues pour les volumes.
           </p>
         </motion.div>
 
-        {/* Competitors grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {competitors.map((comp, i) => (
             <motion.div
@@ -92,7 +88,6 @@ export function CritiqueCompetitors() {
           ))}
         </div>
 
-        {/* Bridge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +96,7 @@ export function CritiqueCompetitors() {
           className="mt-12 text-center"
         >
           <p className="text-[#6B7280] text-lg">
-            Il existait un manque évident. C'est pour ça que Muzzo a été créé.
+            Il existait un manque evident. C est pour ca que Muzzo a ete cree.
           </p>
         </motion.div>
       </div>

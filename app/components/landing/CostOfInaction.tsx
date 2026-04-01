@@ -7,10 +7,10 @@ import { CounterUp } from '../ui/CounterUp'
 const costs = [
   {
     icon: DollarSign,
-    title: 'Coût salarial gaspillé',
-    desc: "Un poste senior vacant, c'est un projet bloqué. À 60k€/an, chaque mois de sourcing raté te coûte 5 000€ de productivité en moins.",
+    title: 'Cout salarial gaspille',
+    desc: "Un poste senior vacant, c est un projet bloque. A 60k e/an, chaque mois de sourcing rate te coute 5 000e de productivite en moins.",
     value: 5000,
-    suffix: '€',
+    suffix: 'e',
     prefix: '',
     label: 'perdu par mois de poste vacant',
     color: 'text-red-400',
@@ -19,20 +19,20 @@ const costs = [
   },
   {
     icon: TrendingDown,
-    title: 'Opportunités manquées',
-    desc: "Un développeur senior embauché 4 mois plus tôt, c'est un produit lancé plus vite, des revenus générés plus tôt, une croissance accélérée.",
+    title: 'Opportunites manquees',
+    desc: "Un developpeur senior embauche 4 mois plus tot, c est un produit lance plus vite, des revenus generes plus tot, une croissance acceleree.",
     value: 3,
     suffix: 'x',
     prefix: '',
-    label: "de retour sur investissement moyen d'une embauche rapide",
+    label: "de retour sur investissement moyen d une embauche rapide",
     color: 'text-orange-400',
     bg: 'bg-orange-400/10',
     border: 'border-orange-400/15',
   },
   {
     icon: Users,
-    title: "Turnover de l'équipe",
-    desc: "Les équipes en sous-effectif s'épuisent. Le turnover augmente. Et tu recommences à recruter — avec les mêmes méthodes qui ne fonctionnent pas.",
+    title: "Turnover de l equipe",
+    desc: "Les equipes en sous-effectif s epuisent. Le turnover augmente. Et tu recommences a recruter -- avec les memes methodes qui ne fonctionnent pas.",
     value: 1.5,
     suffix: 'x',
     prefix: '',
@@ -59,7 +59,6 @@ const costs = [
 export function CostOfInaction() {
   return (
     <section className="py-24 relative overflow-hidden section-features">
-      {/* Blobs */}
       <div
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
         style={{ background: 'radial-gradient(circle, rgba(239,68,68,0.05) 0%, transparent 70%)', filter: 'blur(80px)' }}
@@ -70,7 +69,6 @@ export function CostOfInaction() {
       />
 
       <div className="mx-auto max-w-7xl px-6 relative z-10">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,19 +77,18 @@ export function CostOfInaction() {
         >
           <span className="inline-flex items-center gap-2 text-xs text-red-400 font-medium tracking-widest uppercase glass px-4 py-2 rounded-full border border-red-400/20 mb-6">
             <TrendingDown size={12} />
-            Le vrai coût de l'inaction
+            Le vrai cout de l inaction
           </span>
           <h2 className="section-title text-[#F8F9FF] mb-4">
-            Combien te coûte
+            Combien te coute
             <br />
             <span className="gradient-text">chaque semaine sans recruter ?</span>
           </h2>
           <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
-            Le statu quo a un prix. Et il est bien plus élevé que tu ne le penses.
+            Le statu quo a un prix. Et il est bien plus eleve que tu ne le penses.
           </p>
         </motion.div>
 
-        {/* Cost grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {costs.map((cost, i) => (
             <motion.div
@@ -100,7 +97,7 @@ export function CostOfInaction() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`glass-card p-8 border ${cost.border} hover:border-white/12 transition-all duration-300 group`}
+              className={`glass-card p-8 border ${cost.border} hover:border-white/12 transition-all duration-300`}
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className={`w-11 h-11 ${cost.bg} rounded-xl flex items-center justify-center shrink-0`}>
