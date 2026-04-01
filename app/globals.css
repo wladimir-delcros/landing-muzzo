@@ -124,10 +124,10 @@ body {
 
 /* Typography */
 .hero-title {
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
   font-weight: 900;
   letter-spacing: -0.03em;
-  line-height: 1.02;
+  line-height: 1.1;
 }
 
 .section-title {
