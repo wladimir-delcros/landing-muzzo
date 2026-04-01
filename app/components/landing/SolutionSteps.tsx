@@ -35,7 +35,7 @@ const steps = [
     number: '03',
     title: 'Concentre-toi sur les entretiens, pas le sourcing',
     description:
-      'Tu ne fais plus de sourcing. Tu rencontres directement des talents présélectionnés. Tes équipes RH se recentrent sur leur vraie valeur ajoutée : l\'évaluation et l\'intégration.',
+      "Tu ne fais plus de sourcing. Tu rencontres directement des talents présélectionnés. Tes équipes RH se recentrent sur leur vraie valeur ajoutée : l'évaluation et l'intégration.",
     objection: "On perd le contrôle sur le processus ?",
     objectionAnswer:
       "Non — tu restes décisionnaire sur chaque étape. Muzzo s'occupe du sourcing et de la présélection, tu gères les entretiens et le choix final. C'est ta mission, pas la nôtre.",
@@ -61,14 +61,14 @@ const steps = [
 
 export function SolutionSteps() {
   return (
-    <section className="py-24 relative overflow-hidden section-mid" id="processus">
-      {/* Radial depth gradient */}
+    <section className="py-24 relative overflow-hidden section-steps" id="processus">
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse at 50% 50%, rgba(11, 57, 175, 0.08) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse at 50% 50%, rgba(11,57,175,0.07) 0%, transparent 65%)',
         }}
       />
+
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         {/* Header */}
         <motion.div
@@ -77,15 +77,15 @@ export function SolutionSteps() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="inline-flex items-center gap-2 text-xs text-accent font-medium tracking-widest uppercase glass px-4 py-2 rounded-full border border-accent/20 mb-6">
+          <span className="inline-flex items-center gap-2 text-xs text-[#2554D4] font-medium tracking-widest uppercase glass px-4 py-2 rounded-full border border-[#0B39AF]/25 mb-6">
             La solution
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+          <h2 className="section-title text-[#F8F9FF] mb-4">
             Accède au top 1% des talents
             <br />
             <span className="gradient-text">en 4 étapes, en moins de 48h</span>
           </h2>
-          <p className="text-foreground-muted text-lg max-w-xl mx-auto">
+          <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
             Voici comment Muzzo résout tous les problèmes que tu viens de lire.
           </p>
         </motion.div>
@@ -106,28 +106,28 @@ export function SolutionSteps() {
               {/* Content */}
               <div className={i % 2 === 1 ? 'lg:col-start-2' : ''}>
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="text-6xl font-bold text-white/10 font-display leading-none">
+                  <span className="text-6xl font-black text-white/[0.07] leading-none">
                     {step.number}
                   </span>
                   <div className="h-px flex-1 bg-white/[0.06]" />
                 </div>
 
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#F8F9FF] mb-4 leading-tight">
                   {step.title}
                 </h3>
-                <p className="text-foreground-muted text-lg leading-relaxed mb-6">
+                <p className="text-[#6B7280] text-lg leading-relaxed mb-6">
                   {step.description}
                 </p>
 
                 {/* Objection handler */}
-                <div className="glass rounded-xl p-4 border border-accent/10">
+                <div className="glass-card p-4 border border-[#0B39AF]/15">
                   <div className="flex items-start gap-3">
-                    <Info size={15} className="text-accent shrink-0 mt-0.5" />
+                    <Info size={15} className="text-[#2554D4] shrink-0 mt-0.5" />
                     <div>
-                      <p className="text-accent text-sm font-medium mb-1">
-                        "Et si {step.objection.toLowerCase().replace("et si ", "")} ?"
+                      <p className="text-[#2554D4] text-sm font-medium mb-1">
+                        "{step.objection}"
                       </p>
-                      <p className="text-foreground-muted text-sm leading-relaxed">
+                      <p className="text-[#6B7280] text-sm leading-relaxed">
                         {step.objectionAnswer}
                       </p>
                     </div>
@@ -141,12 +141,12 @@ export function SolutionSteps() {
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="glass-strong rounded-2xl p-8 border border-white/[0.08] relative overflow-hidden">
-                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+                <div className="glass-card p-8 border border-white/[0.08] relative overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#2554D4]/50 to-transparent" />
 
                   <div className="flex items-center gap-2 mb-6">
-                    <div className="w-2 h-2 rounded-full bg-accent" />
-                    <span className="text-accent text-xs font-medium tracking-wider uppercase">
+                    <div className="w-2 h-2 rounded-full bg-[#2554D4]" />
+                    <span className="text-[#2554D4] text-xs font-medium tracking-wider uppercase">
                       {step.visual.label}
                     </span>
                   </div>
@@ -161,14 +161,13 @@ export function SolutionSteps() {
                         transition={{ delay: j * 0.1 + 0.3 }}
                         className="flex items-center gap-3 p-3 rounded-lg bg-white/[0.03] border border-white/[0.04]"
                       >
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                        <span className="text-white text-sm">{item}</span>
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#2554D4] shrink-0" />
+                        <span className="text-[#F8F9FF] text-sm">{item}</span>
                       </motion.div>
                     ))}
                   </div>
 
-                  {/* Step number watermark */}
-                  <div className="absolute bottom-4 right-6 text-8xl font-bold text-white/[0.03] select-none font-display">
+                  <div className="absolute bottom-4 right-6 text-8xl font-black text-white/[0.03] select-none">
                     {step.number}
                   </div>
                 </div>
@@ -184,11 +183,11 @@ export function SolutionSteps() {
           viewport={{ once: true }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-20"
         >
-          <MagneticButton href="#mission" variant="primary" className="px-8 py-4 text-base">
+          <MagneticButton href="https://muzzo.io" variant="primary" className="px-8 py-4 text-base">
             Lancer ma première mission
             <ArrowRight size={16} />
           </MagneticButton>
-          <MagneticButton href="#tarifs" variant="ghost" className="px-8 py-4 text-base">
+          <MagneticButton href="https://muzzo.io" variant="ghost" className="px-8 py-4 text-base">
             Voir les tarifs
           </MagneticButton>
         </motion.div>

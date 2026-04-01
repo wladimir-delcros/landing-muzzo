@@ -9,23 +9,23 @@ const alternatives = [
     title: 'Voir une démo en 3 min',
     desc: 'Comment une mission se lance, et ce que tu reçois dans les 48h.',
     cta: 'Regarder la démo',
-    href: '#demo',
+    href: 'https://muzzo.io',
     accent: false,
   },
   {
     icon: MessageSquare,
     title: 'Parler à un expert Muzzo',
-    desc: 'Décris ton besoin, on t\'explique comment nos chasseurs travailleraient sur ton poste.',
+    desc: "Décris ton besoin, on t'explique comment nos chasseurs travailleraient sur ton poste.",
     cta: 'Réserver un appel',
-    href: '#contact',
+    href: 'https://muzzo.io',
     accent: true,
   },
   {
     icon: FileText,
     title: 'Lire le guide du recrutement',
-    desc: 'Comment recruter un profil rare en 2024 sans acompte, ni abonnement.',
+    desc: 'Comment recruter un profil rare en 2026 sans acompte, ni abonnement.',
     cta: 'Télécharger le guide',
-    href: '#blog',
+    href: 'https://muzzo.io',
     accent: false,
   },
 ]
@@ -47,14 +47,14 @@ const objections = [
 
 export function SkepticCTA() {
   return (
-    <section className="py-24 relative overflow-hidden section-mid" id="tarifs">
-      {/* Radial depth */}
+    <section className="py-24 relative overflow-hidden section-steps" id="tarifs">
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse at 50% 100%, rgba(99, 102, 241, 0.10) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse at 50% 100%, rgba(37,84,212,0.08) 0%, transparent 60%)',
         }}
       />
+
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         {/* Header */}
         <motion.div
@@ -63,11 +63,11 @@ export function SkepticCTA() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="section-title text-[#F8F9FF] mb-4">
             Pas encore convaincu ?{' '}
             <span className="gradient-text">C'est normal.</span>
           </h2>
-          <p className="text-foreground-muted text-lg max-w-xl mx-auto">
+          <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
             Voici trois façons de tester Muzzo sans engagement,
             et les réponses aux objections que tu as peut-être encore.
           </p>
@@ -90,31 +90,31 @@ export function SkepticCTA() {
                 show: { opacity: 1, y: 0 },
               }}
               whileHover={{ y: -4 }}
-              className={`block p-8 rounded-2xl border transition-all duration-300 group ${
+              className={`block p-8 rounded-[20px] transition-all duration-300 group ${
                 alt.accent
-                  ? 'glass-strong border-accent/30 hover:border-accent/60'
-                  : 'glass border-white/[0.06] hover:border-white/15'
+                  ? 'glass-card border border-[#0B39AF]/30 hover:border-[#2554D4]/50'
+                  : 'glass-card border border-white/[0.07] hover:border-white/15'
               }`}
             >
-              <div className={`w-12 h-12 rounded-xl ${alt.accent ? 'bg-accent/20' : 'bg-white/[0.05]'} flex items-center justify-center mb-4`}>
-                <alt.icon size={22} className={alt.accent ? 'text-accent' : 'text-foreground-muted'} />
+              <div className={`w-12 h-12 rounded-xl ${alt.accent ? 'bg-[#0B39AF]/20' : 'bg-white/[0.05]'} flex items-center justify-center mb-4`}>
+                <alt.icon size={22} className={alt.accent ? 'text-[#2554D4]' : 'text-[#6B7280]'} />
               </div>
-              <h3 className="text-white font-semibold text-lg mb-2">{alt.title}</h3>
-              <p className="text-foreground-muted text-sm leading-relaxed mb-5">{alt.desc}</p>
-              <span className={`text-sm font-medium group-hover:underline ${alt.accent ? 'text-accent' : 'text-foreground-muted'}`}>
+              <h3 className="text-[#F8F9FF] font-semibold text-lg mb-2">{alt.title}</h3>
+              <p className="text-[#6B7280] text-sm leading-relaxed mb-5">{alt.desc}</p>
+              <span className={`text-sm font-medium group-hover:underline ${alt.accent ? 'text-[#2554D4]' : 'text-[#6B7280]'}`}>
                 {alt.cta} →
               </span>
             </motion.a>
           ))}
         </motion.div>
 
-        {/* FAQ-style objections */}
+        {/* FAQ objections */}
         <div className="max-w-3xl mx-auto">
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold text-center mb-8"
+            className="text-2xl font-bold text-center text-[#F8F9FF] mb-8"
           >
             Questions fréquentes
           </motion.h3>
@@ -127,13 +127,13 @@ export function SkepticCTA() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="glass rounded-xl p-6"
+                className="glass-card p-6 border border-white/[0.07]"
               >
                 <div className="flex items-start gap-3 mb-3">
-                  <Shield size={16} className="text-accent shrink-0 mt-0.5" />
-                  <p className="text-white font-medium">{obj.q}</p>
+                  <Shield size={16} className="text-[#2554D4] shrink-0 mt-0.5" />
+                  <p className="text-[#F8F9FF] font-medium">{obj.q}</p>
                 </div>
-                <p className="text-foreground-muted text-sm leading-relaxed pl-7">{obj.a}</p>
+                <p className="text-[#6B7280] text-sm leading-relaxed pl-7">{obj.a}</p>
               </motion.div>
             ))}
           </div>

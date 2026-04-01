@@ -40,9 +40,9 @@ export function MagneticButton({
   }
 
   const variants = {
-    primary: 'bg-accent text-white hover:bg-accent-light border border-accent/50 glow-sm',
-    ghost: 'bg-transparent text-foreground-muted hover:text-white border border-border hover:border-white/20',
-    outline: 'bg-transparent text-accent border border-accent/50 hover:bg-accent/10',
+    primary: 'bg-[#0B39AF] text-[#F8F9FF] hover:bg-[#2554D4] border border-[#0B39AF]/60',
+    ghost: 'bg-transparent text-[#6B7280] hover:text-[#F8F9FF] border border-white/[0.07] hover:border-white/20',
+    outline: 'bg-transparent text-[#2554D4] border border-[#0B39AF]/40 hover:bg-[#0B39AF]/10',
   }
 
   const content = (

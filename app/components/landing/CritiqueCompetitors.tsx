@@ -29,13 +29,13 @@ const competitors = [
 export function CritiqueCompetitors() {
   return (
     <section className="py-24 relative overflow-hidden section-dark">
-      {/* Radial depth */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse at 100% 50%, rgba(99, 102, 241, 0.10) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at 100% 50%, rgba(37,84,212,0.08) 0%, transparent 55%)',
         }}
       />
+
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         {/* Header */}
         <motion.div
@@ -48,11 +48,11 @@ export function CritiqueCompetitors() {
             <AlertTriangle size={12} />
             Pourquoi les alternatives ne fonctionnent pas
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+          <h2 className="section-title text-[#F8F9FF]">
             Les autres solutions du marché ont{' '}
             <span className="gradient-text">un problème fondamental</span>
           </h2>
-          <p className="text-foreground-muted text-lg mt-4 max-w-xl mx-auto">
+          <p className="text-[#6B7280] text-lg mt-4 max-w-xl mx-auto">
             Elles ne sont pas conçues pour les profils rares. Elles sont conçues pour les volumes.
           </p>
         </motion.div>
@@ -66,27 +66,25 @@ export function CritiqueCompetitors() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="glass-strong rounded-2xl p-8 border border-red-400/10 hover:border-red-400/20 transition-all duration-300"
+              className="glass-card p-8 border border-red-400/10 hover:border-red-400/20 transition-all duration-300"
             >
-              {/* Header */}
               <div className="flex items-start gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-red-400/10 flex items-center justify-center shrink-0 mt-0.5">
                   <X size={18} className="text-red-400" />
                 </div>
                 <div>
-                  <h3 className="text-white font-semibold text-lg leading-tight">{comp.name}</h3>
+                  <h3 className="text-[#F8F9FF] font-semibold text-lg leading-tight">{comp.name}</h3>
                   <span className="text-red-400/70 text-xs font-medium mt-1 block">{comp.cost}</span>
                 </div>
               </div>
 
-              {/* Issues */}
               <ul className="space-y-3">
                 {comp.issues.map((issue) => (
                   <li key={issue} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-red-400/10 flex items-center justify-center shrink-0 mt-0.5">
                       <X size={10} className="text-red-400" />
                     </div>
-                    <span className="text-foreground-muted text-sm leading-relaxed">{issue}</span>
+                    <span className="text-[#6B7280] text-sm leading-relaxed">{issue}</span>
                   </li>
                 ))}
               </ul>
@@ -94,7 +92,7 @@ export function CritiqueCompetitors() {
           ))}
         </div>
 
-        {/* Transition bridge */}
+        {/* Bridge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -102,7 +100,7 @@ export function CritiqueCompetitors() {
           transition={{ delay: 0.3 }}
           className="mt-12 text-center"
         >
-          <p className="text-foreground-muted text-lg">
+          <p className="text-[#6B7280] text-lg">
             Il existait un manque évident. C'est pour ça que Muzzo a été créé.
           </p>
         </motion.div>

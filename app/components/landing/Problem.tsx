@@ -13,6 +13,7 @@ const stats = [
     label: "d'augmentation des postes vacants depuis 2019",
     color: 'text-red-400',
     bg: 'bg-red-400/10',
+    border: 'border-red-400/15',
   },
   {
     icon: Clock,
@@ -21,6 +22,7 @@ const stats = [
     label: 'en moyenne pour recruter un profil technique senior',
     color: 'text-orange-400',
     bg: 'bg-orange-400/10',
+    border: 'border-orange-400/15',
   },
   {
     icon: AlertCircle,
@@ -29,19 +31,24 @@ const stats = [
     label: 'des recrutements échouent par manque de spécialisation',
     color: 'text-yellow-400',
     bg: 'bg-yellow-400/10',
+    border: 'border-yellow-400/15',
   },
 ]
 
 export function Problem() {
   return (
-    <section className="py-24 relative overflow-hidden section-gradient" id="employeurs">
-      {/* Radial depth gradient */}
+    <section className="py-24 relative overflow-hidden section-problem" id="employeurs">
+      {/* Blob 1 — top right */}
+      <div className="blob-1" />
+
+      {/* Radial center subtle */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.12) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse at 50% 0%, rgba(11,57,175,0.10) 0%, transparent 60%)',
         }}
       />
+
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         {/* Badge */}
         <motion.div
@@ -52,7 +59,7 @@ export function Problem() {
         >
           <span className="inline-flex items-center gap-2 text-xs text-red-400 font-medium tracking-widest uppercase glass px-4 py-2 rounded-full border border-red-400/20">
             <AlertCircle size={12} />
-            La réalité du recrutement en 2024
+            La réalité du recrutement en 2026
           </span>
         </motion.div>
 
@@ -62,7 +69,7 @@ export function Problem() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6 leading-tight"
+          className="section-title text-center mb-6 text-[#F8F9FF]"
         >
           Honnêtement — <span className="gradient-text">est-ce vraiment</span>
           <br />
@@ -74,7 +81,7 @@ export function Problem() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-foreground-muted text-lg text-center max-w-2xl mx-auto mb-16"
+          className="text-[#6B7280] text-lg text-center max-w-2xl mx-auto mb-16"
         >
           Le marché des profils rares est sous tension. Chaque semaine de poste vacant
           coûte bien plus qu'une mission de chasse. Et pourtant, la plupart des entreprises
@@ -90,34 +97,30 @@ export function Problem() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
-              className="glass-strong rounded-2xl p-8 text-center relative overflow-hidden group hover:border-white/15 transition-all duration-300"
+              className={`glass-card p-8 text-center relative overflow-hidden group hover:border-white/15 transition-all duration-300 border ${stat.border}`}
             >
               <div className={`w-12 h-12 ${stat.bg} rounded-xl flex items-center justify-center mx-auto mb-4`}>
                 <stat.icon size={22} className={stat.color} />
               </div>
-              <div className={`text-5xl font-bold mb-2 ${stat.color}`}>
+              <div className={`text-5xl font-black mb-2 ${stat.color}`}>
                 <CounterUp target={stat.value} suffix={stat.suffix} duration={2.5} />
               </div>
-              <p className="text-foreground-muted text-sm leading-relaxed">{stat.label}</p>
-
-              {/* Hover glow */}
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ boxShadow: 'inset 0 0 40px rgba(11,57,175,0.05)' }} />
+              <p className="text-[#6B7280] text-sm leading-relaxed">{stat.label}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Investment mindset text */}
+        {/* Quote */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto glass rounded-2xl p-8 text-center"
+          className="max-w-3xl mx-auto glass-card p-8 text-center border border-[#0B39AF]/20"
         >
-          <p className="text-white text-lg font-medium mb-2">
+          <p className="text-[#F8F9FF] text-lg font-medium mb-2">
             "Nous cherchions un profil depuis 6 mois. Muzzo l'a trouvé en 24 heures."
           </p>
-          <p className="text-foreground-muted text-sm">— Etienne Metzger, Head of Talent Acquisition, Mistral AI</p>
+          <p className="text-[#6B7280] text-sm">— Etienne Metzger, Head of Talent Acquisition, Mistral AI</p>
         </motion.div>
 
         {/* CTA */}
@@ -128,11 +131,11 @@ export function Problem() {
           transition={{ delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12"
         >
-          <MagneticButton href="#mission" variant="primary" className="px-8 py-4">
+          <MagneticButton href="https://muzzo.io" variant="primary" className="px-8 py-4">
             Débloquer ma situation maintenant
             <ArrowRight size={16} />
           </MagneticButton>
-          <MagneticButton href="#processus" variant="ghost" className="px-8 py-4">
+          <MagneticButton href="https://muzzo.io" variant="ghost" className="px-8 py-4">
             Voir comment ça marche
           </MagneticButton>
         </motion.div>

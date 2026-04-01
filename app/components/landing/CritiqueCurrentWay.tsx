@@ -13,14 +13,19 @@ const pains = [
 
 export function CritiqueCurrentWay() {
   return (
-    <section className="py-24 relative overflow-hidden section-mid">
-      {/* Radial depth */}
+    <section className="py-24 relative overflow-hidden section-features">
+      {/* Gradient mesh */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse at 0% 50%, rgba(11, 57, 175, 0.10) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse at 0% 50%, rgba(11,57,175,0.12) 0%, transparent 55%)',
         }}
       />
+      <div
+        className="pointer-events-none absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full"
+        style={{ background: 'rgba(37,84,212,0.08)', filter: 'blur(80px)' }}
+      />
+
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: copy */}
@@ -29,7 +34,7 @@ export function CritiqueCurrentWay() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-xs text-foreground-muted font-medium tracking-widest uppercase block mb-4"
+              className="text-xs text-[#6B7280] font-medium tracking-widest uppercase block mb-4"
             >
               Le problème
             </motion.span>
@@ -39,7 +44,7 @@ export function CritiqueCurrentWay() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl font-bold leading-tight mb-6"
+              className="section-title mb-6 text-[#F8F9FF]"
             >
               Ce que tu fais aujourd'hui
               <span className="gradient-text"> n'est pas conçu</span>
@@ -51,7 +56,7 @@ export function CritiqueCurrentWay() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-foreground-muted text-lg mb-8 leading-relaxed"
+              className="text-[#6B7280] text-lg mb-8 leading-relaxed"
             >
               Ce n'est pas ta faute — les outils standards sont faits pour les volumes,
               pas pour la rareté. Les profils que tu cherches ne répondent pas aux annonces.
@@ -73,7 +78,7 @@ export function CritiqueCurrentWay() {
                     hidden: { opacity: 0, x: -20 },
                     show: { opacity: 1, x: 0 },
                   }}
-                  className="flex items-start gap-3 text-foreground-muted"
+                  className="flex items-start gap-3 text-[#6B7280]"
                 >
                   <div className="w-5 h-5 rounded-full bg-red-400/10 flex items-center justify-center mt-0.5 shrink-0">
                     <X size={10} className="text-red-400" />
@@ -84,7 +89,7 @@ export function CritiqueCurrentWay() {
             </motion.ul>
           </div>
 
-          {/* Right: visual comparison */}
+          {/* Right: visual */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -92,40 +97,28 @@ export function CritiqueCurrentWay() {
             transition={{ delay: 0.2 }}
             className="relative"
           >
-            {/* "Without Muzzo" visual */}
-            <div className="glass rounded-2xl p-6 border border-red-400/10">
+            <div className="glass-card p-6 border border-red-400/10">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-2 h-2 rounded-full bg-red-400" />
                 <span className="text-red-400/80 text-xs font-medium uppercase tracking-wider">Sans Muzzo</span>
               </div>
 
-              {/* Fake funnel */}
               <div className="space-y-2">
                 {[
-                  { label: 'Annonce publiée', value: '500+ candidatures', bad: true },
-                  { label: 'CVs qualifiés', value: '~25', bad: true },
-                  { label: 'Profils adéquats', value: '3–4', bad: true },
-                  { label: 'Acceptation poste', value: '... 6 mois plus tard', bad: true },
+                  { label: 'Annonce publiée', value: '500+ candidatures' },
+                  { label: 'CVs qualifiés', value: '~25' },
+                  { label: 'Profils adéquats', value: '3–4' },
+                  { label: 'Acceptation poste', value: '... 6 mois plus tard' },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-white/[0.02]">
-                    <span className="text-foreground-muted text-sm">{item.label}</span>
+                  <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-white/[0.02] border border-white/[0.04]">
+                    <span className="text-[#6B7280] text-sm">{item.label}</span>
                     <span className="text-red-400/80 text-xs font-medium">{item.value}</span>
                   </div>
                 ))}
               </div>
 
-              {/* Cost badge */}
-              <div className="mt-4 p-3 rounded-lg bg-red-400/5 border border-red-400/15 text-center">
+              <div className="mt-4 p-3 rounded-xl bg-red-400/5 border border-red-400/15 text-center">
                 <span className="text-red-400 text-sm font-medium">Coût réel : 3–6 mois de salaire perdu en productivité</span>
-              </div>
-            </div>
-
-            {/* Arrow decoration */}
-            <div className="absolute -right-4 top-1/2 -translate-y-1/2 hidden lg:block">
-              <div className="w-8 h-8 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-accent">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
               </div>
             </div>
           </motion.div>

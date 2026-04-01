@@ -29,7 +29,7 @@ const testimonials = [
     title: 'Gérante Associée',
     company: 'Assuralliance AXA',
     initials: 'SA',
-    color: 'from-accent/30 to-blue-600/30',
+    color: 'from-[#2554D4]/30 to-blue-600/30',
     metric: '10x les résultats',
   },
   {
@@ -70,14 +70,17 @@ const stats = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 relative overflow-hidden section-dark" id="chasseurs">
-      {/* Radial depth */}
+    <section className="py-24 relative overflow-hidden section-testimonials" id="chasseurs">
+      {/* Blob 2 — bottom left */}
+      <div className="blob-2" />
+
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse at 50% 0%, rgba(37, 84, 212, 0.12) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse at 50% 0%, rgba(37,84,212,0.10) 0%, transparent 60%)',
         }}
       />
+
       <div className="mx-auto max-w-7xl px-6 relative z-10">
         {/* Header */}
         <motion.div
@@ -86,16 +89,16 @@ export function Testimonials() {
           viewport={{ once: true }}
           className="text-center mb-6"
         >
-          <span className="inline-flex items-center gap-2 text-xs text-accent font-medium tracking-widest uppercase glass px-4 py-2 rounded-full border border-accent/20 mb-6">
+          <span className="inline-flex items-center gap-2 text-xs text-[#2554D4] font-medium tracking-widest uppercase glass px-4 py-2 rounded-full border border-[#0B39AF]/25 mb-6">
             <Star size={12} />
             Témoignages clients
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+          <h2 className="section-title text-[#F8F9FF] mb-4">
             Pourquoi des centaines d'entreprises
             <br />
             <span className="gradient-text">font confiance à Muzzo</span>
           </h2>
-          <p className="text-foreground-muted text-lg max-w-xl mx-auto">
+          <p className="text-[#6B7280] text-lg max-w-xl mx-auto">
             Des DRH, CEOs et Heads of Talent qui ont résolu leur problème de recrutement.
           </p>
         </motion.div>
@@ -109,8 +112,8 @@ export function Testimonials() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16"
         >
           {stats.map((stat, i) => (
-            <div key={stat.label} className="glass rounded-xl p-5 text-center">
-              <div className="text-3xl font-bold text-white mb-1">
+            <div key={stat.label} className="glass-card p-5 text-center border border-white/[0.06]">
+              <div className="text-3xl font-black text-[#F8F9FF] mb-1">
                 <CounterUp
                   target={stat.value}
                   suffix={stat.suffix}
@@ -118,12 +121,12 @@ export function Testimonials() {
                   duration={2 + i * 0.2}
                 />
               </div>
-              <div className="text-foreground-muted text-xs">{stat.label}</div>
+              <div className="text-[#6B7280] text-xs">{stat.label}</div>
             </div>
           ))}
         </motion.div>
 
-        {/* Testimonials masonry grid */}
+        {/* Masonry testimonials */}
         <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
           {testimonials.map((t, i) => (
             <motion.div
@@ -132,36 +135,36 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="break-inside-avoid glass-strong rounded-2xl p-6 border border-white/[0.06] hover:border-accent/20 transition-all duration-300 group mb-6"
+              className="break-inside-avoid glass-card p-6 border border-white/[0.07] hover:border-[#2554D4]/25 transition-all duration-300 group mb-6"
             >
               {/* Metric badge */}
               <div className="flex items-center justify-between mb-4">
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, j) => (
-                    <Star key={j} size={12} className="text-accent fill-accent" />
+                    <Star key={j} size={12} className="text-[#2554D4] fill-[#2554D4]" />
                   ))}
                 </div>
-                <span className="text-xs text-accent font-semibold glass px-3 py-1 rounded-full border border-accent/20">
+                <span className="text-xs text-[#2554D4] font-semibold glass px-3 py-1 rounded-full border border-[#0B39AF]/25">
                   {t.metric}
                 </span>
               </div>
 
               {/* Quote */}
               <div className="relative">
-                <Quote size={20} className="text-accent/20 mb-2" />
-                <p className="text-foreground-muted text-sm leading-relaxed">
+                <Quote size={20} className="text-[#2554D4]/20 mb-2" />
+                <p className="text-[#6B7280] text-sm leading-relaxed">
                   "{t.quote}"
                 </p>
               </div>
 
               {/* Author */}
-              <div className="flex items-center gap-3 mt-5 pt-4 border-t border-white/[0.04]">
-                <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center text-white font-semibold text-sm shrink-0`}>
+              <div className="flex items-center gap-3 mt-5 pt-4 border-t border-white/[0.05]">
+                <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center text-[#F8F9FF] font-semibold text-sm shrink-0`}>
                   {t.initials}
                 </div>
                 <div>
-                  <div className="text-white text-sm font-medium">{t.name}</div>
-                  <div className="text-foreground-muted text-xs">
+                  <div className="text-[#F8F9FF] text-sm font-medium">{t.name}</div>
+                  <div className="text-[#6B7280] text-xs">
                     {t.title} · {t.company}
                   </div>
                 </div>
