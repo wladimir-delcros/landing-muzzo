@@ -61,8 +61,15 @@ const steps = [
 
 export function SolutionSteps() {
   return (
-    <section className="py-24 relative overflow-hidden" id="processus">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="py-24 relative overflow-hidden section-mid" id="processus">
+      {/* Radial depth gradient */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 50%, rgba(11, 57, 175, 0.08) 0%, transparent 70%)',
+        }}
+      />
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}

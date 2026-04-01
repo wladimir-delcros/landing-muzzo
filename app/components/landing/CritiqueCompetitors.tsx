@@ -28,8 +28,15 @@ const competitors = [
 
 export function CritiqueCompetitors() {
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="py-24 relative overflow-hidden section-dark">
+      {/* Radial depth */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at 100% 50%, rgba(99, 102, 241, 0.10) 0%, transparent 60%)',
+        }}
+      />
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}

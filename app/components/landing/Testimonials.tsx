@@ -70,8 +70,15 @@ const stats = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 relative overflow-hidden" id="chasseurs">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="py-24 relative overflow-hidden section-dark" id="chasseurs">
+      {/* Radial depth */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 0%, rgba(37, 84, 212, 0.12) 0%, transparent 70%)',
+        }}
+      />
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}

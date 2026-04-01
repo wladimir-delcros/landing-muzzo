@@ -27,8 +27,15 @@ const links = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/[0.06] py-16">
-      <div className="mx-auto max-w-7xl px-6">
+    <footer className="relative py-16 overflow-hidden section-dark" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+      {/* Radial depth */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 0%, rgba(11, 57, 175, 0.08) 0%, transparent 60%)',
+        }}
+      />
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">

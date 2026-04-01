@@ -54,15 +54,23 @@ const costs = [
 
 export function CostOfInaction() {
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Background glow */}
+    <section className="py-24 relative overflow-hidden section-gradient">
+      {/* Abstract blobs */}
       <div className="pointer-events-none absolute inset-0">
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
           style={{
-            background: 'radial-gradient(circle, rgba(239,68,68,0.05) 0%, transparent 70%)',
-            filter: 'blur(60px)',
+            background: 'radial-gradient(circle, rgba(239,68,68,0.06) 0%, transparent 70%)',
+            filter: 'blur(80px)',
           }}
+        />
+        <div
+          className="absolute -top-20 right-0 w-[400px] h-[400px] rounded-full"
+          style={{ background: 'rgba(11, 57, 175, 0.12)', filter: 'blur(80px)', opacity: 0.2 }}
+        />
+        <div
+          className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full"
+          style={{ background: 'rgba(99, 102, 241, 0.15)', filter: 'blur(80px)', opacity: 0.15 }}
         />
       </div>
 

@@ -25,7 +25,7 @@ function LogoItem({ name, abbr }: { name: string; abbr: string }) {
 
 export function LogoCloud() {
   return (
-    <section className="py-16 relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden section-mid">
       <div className="section-divider mb-12" />
 
       <motion.div
@@ -42,9 +42,9 @@ export function LogoCloud() {
       {/* Marquee container */}
       <div className="relative flex overflow-hidden">
         {/* Left fade */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#080e1f] to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#111111] to-transparent z-10" />
         {/* Right fade */}
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#080e1f] to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#111111] to-transparent z-10" />
 
         {/* First track */}
         <div className="flex animate-marquee">

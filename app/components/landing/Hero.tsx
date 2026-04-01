@@ -8,14 +8,36 @@ import { TextReveal } from '../ui/TextReveal'
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-16 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-16 overflow-hidden section-dark">
       <GradientMesh />
+
+      {/* Radial gradient top — profondeur */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-[70%]"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 70%)',
+        }}
+      />
+
+      {/* Abstract blobs — violet/indigo */}
+      <div
+        className="pointer-events-none absolute -top-24 -left-24 w-[480px] h-[480px] rounded-full"
+        style={{ background: 'rgba(99, 102, 241, 0.18)', filter: 'blur(80px)', opacity: 0.22 }}
+      />
+      <div
+        className="pointer-events-none absolute top-1/3 -right-32 w-[360px] h-[360px] rounded-full"
+        style={{ background: 'rgba(11, 57, 175, 0.22)', filter: 'blur(80px)', opacity: 0.2 }}
+      />
+      <div
+        className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full"
+        style={{ background: 'rgba(37, 84, 212, 0.15)', filter: 'blur(80px)', opacity: 0.18 }}
+      />
 
       {/* Radial glow center */}
       <div
         className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
         style={{
-          background: 'radial-gradient(circle, rgba(11,57,175,0.08) 0%, transparent 60%)',
+          background: 'radial-gradient(circle, rgba(11,57,175,0.10) 0%, transparent 60%)',
         }}
       />
 
@@ -157,7 +179,7 @@ export function Hero() {
             </div>
 
             {/* Bottom fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#080e1f] to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
           </div>
         </motion.div>
       </div>

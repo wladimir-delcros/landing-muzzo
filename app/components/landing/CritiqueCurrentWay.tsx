@@ -13,8 +13,15 @@ const pains = [
 
 export function CritiqueCurrentWay() {
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="py-24 relative overflow-hidden section-mid">
+      {/* Radial depth */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at 0% 50%, rgba(11, 57, 175, 0.10) 0%, transparent 60%)',
+        }}
+      />
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: copy */}
           <div>

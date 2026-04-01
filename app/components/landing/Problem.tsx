@@ -34,8 +34,15 @@ const stats = [
 
 export function Problem() {
   return (
-    <section className="py-24 relative overflow-hidden" id="employeurs">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="py-24 relative overflow-hidden section-gradient" id="employeurs">
+      {/* Radial depth gradient */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.12) 0%, transparent 70%)',
+        }}
+      />
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

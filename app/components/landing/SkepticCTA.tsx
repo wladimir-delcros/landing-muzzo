@@ -47,8 +47,15 @@ const objections = [
 
 export function SkepticCTA() {
   return (
-    <section className="py-24 relative overflow-hidden" id="tarifs">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="py-24 relative overflow-hidden section-mid" id="tarifs">
+      {/* Radial depth */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 100%, rgba(99, 102, 241, 0.10) 0%, transparent 70%)',
+        }}
+      />
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
