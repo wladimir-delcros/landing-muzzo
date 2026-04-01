@@ -11,7 +11,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Muzzo — Le top 1% des chasseurs de têtes, sélectionné pour vous',
   description:
-    'Lancez votre mission de recrutement, rencontrez des talents rares et payez uniquement à l'acceptation du poste. Aucun acompte, aucun abonnement.',
+    "Lancez votre mission de recrutement, rencontrez des talents rares et payez uniquement à l'acceptation du poste. Aucun acompte, aucun abonnement.",
   openGraph: {
     title: 'Muzzo — Recrutez le top 1% sans acompte',
     description: 'Plus de 2 000 chasseurs de têtes sélectionnés par la data. Premiers candidats en 48h.',
